@@ -2,36 +2,54 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Portfolio นายจิรชัย โนนศรีลาด</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio นายจิรชัย</title>
 
 <style>
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family:Tahoma,sans-serif;
+}
+
+body{
     background:linear-gradient(135deg,#b8fff5,#98f5e1,#d9fff8);
     overflow:hidden;
+    height:100vh;
 }
 
 h1{
     text-align:center;
     color:#00695c;
-    margin-top:40px;
     font-size:45px;
+    margin-top:30px;
+}
+
+.profile{
+    display:block;
+    width:180px;
+    height:180px;
+    margin:20px auto;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
 }
 
 .menu{
     width:300px;
-    margin:40px auto;
+    margin:20px auto;
 }
 
 .menu a{
     display:block;
     text-decoration:none;
     text-align:center;
-    padding:15px;
-    margin:15px 0;
     color:white;
     background:#00b894;
+    padding:15px;
+    margin:15px 0;
     border-radius:15px;
     font-size:20px;
     box-shadow:0 5px 10px rgba(0,0,0,.2);
@@ -61,30 +79,39 @@ h1{
 </style>
 
 </head>
-
 <body>
 
 <h1>🍃 Portfolio 🍃</h1>
 
+<img src="WIN_20260625_14_50_55_Pro.jpg" alt="Profile" class="profile">
+
 <div class="menu">
     <a href="profile.html">👤 ประวัติส่วนตัว</a>
-    <a href="profile.html">📸 กิจกรรม</a>
-    <a href="profile.html">🎓 ประวัติการศึกษา</a>
-    <a href="profile.html">📞 ช่องทางการติดต่อ</a>
+    <a href="activity.html">📸 กิจกรรม</a>
+    <a href="education.html">🎓 ประวัติการศึกษา</a>
+    <a href="contact.html">📞 ช่องทางการติดต่อ</a>
 </div>
 
 <script>
-function leaf(){
-    let l=document.createElement("div");
-    l.className="leaf";
-    l.innerHTML=["🍃","🍂","🌿"][Math.floor(Math.random()*3)];
-    l.style.left=Math.random()*100+"vw";
-    l.style.animationDuration=(5+Math.random()*5)+"s";
-    l.style.fontSize=(20+Math.random()*20)+"px";
-    document.body.appendChild(l);
-    setTimeout(()=>l.remove(),10000);
+function createLeaf(){
+    let leaf=document.createElement("div");
+    leaf.className="leaf";
+
+    let leaves=["🍃","🍂","🌿"];
+    leaf.innerHTML=leaves[Math.floor(Math.random()*leaves.length)];
+
+    leaf.style.left=Math.random()*100+"vw";
+    leaf.style.animationDuration=(5+Math.random()*5)+"s";
+    leaf.style.fontSize=(20+Math.random()*20)+"px";
+
+    document.body.appendChild(leaf);
+
+    setTimeout(()=>{
+        leaf.remove();
+    },10000);
 }
-setInterval(leaf,300);
+
+setInterval(createLeaf,300);
 </script>
 
 </body>
